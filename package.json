@@ -1,12 +1,12 @@
 {
   "name": "samuel-portfolio",
   "version": "1.0.0",
-  "description": "Portfolio website for Samuel Kofi Agyei-Tuffour — SecOps Engineer & Zero Trust Architect",
+  "description": "Portfolio website for Samuel Kofi Agyei-Tuffour - SecOps Engineer and Zero Trust Architect",
   "private": true,
   "author": "Samuel Kofi Agyei-Tuffour <kofileumas@gmail.com>",
-  "license": "MIT"
-      "scripts": {
-        "deploy": "wrangler pages deploy .",
-        "dev": "wrangler pages dev ."
-      }
+  "license": "MIT",
+  "scripts": {
+    "deploy": "wrangler pages deploy .",
+    "dev": "wrangler pages dev ."
+  }
 }
