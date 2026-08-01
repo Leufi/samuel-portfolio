@@ -1,8 +1,70 @@
 # Samuel Kofi Agyei-Tuffour — Portfolio
 
-A responsive, modern single-page portfolio for Samuel Kofi Agyei-Tuffour, SecOps Engineer & Zero Trust / IAM Architect based in Rotterdam, Netherlands.
+## What's done ✅
+- Portfolio site built and committed to local git
+- GitHub CLI installed
+- Cloudflare config (`wrangler.toml`) ready
 
-## Stack
+## What you need to do manually (~2 minutes)
+
+### Step 1 — Authenticate GitHub
+```bash
+gh auth login
+```
+- Choose: **GitHub.com** → **HTTPS** → **Yes** (authenticate Git) → **Login with a web browser**
+- Sign in as the GitHub account where you want the repo
+
+### Step 2 — Create the repo & push
+```bash
+cd ~/DEV/samuel-portfolio
+gh repo create samuel-portfolio --public --source=. --remote=origin --push --description "Portfolio website - SecOps Engineer & Zero Trust Architect"
+```
+
+### Step 3 — Connect to Cloudflare Pages
+1. Open https://dash.cloudflare.com → sign up free (if you don't have an account)
+2. Click **Workers & Pages** → **Create application** → **Pages** → **Connect to Git**
+3. Authorize Cloudflare to read your GitHub repos
+4. Select `samuel-portfolio`
+5. **Build settings** (Cloudflare auto-detects static — confirm these):
+   - **Framework preset**: None
+   - **Build command**: *(leave empty)*
+   - **Build output directory**: `/` (or `.`)
+6. Click **Save and Deploy**
+
+### Step 4 — Wait ~60 seconds
+Your site goes live at:
+```
+https://samuel-portfolio.pages.dev
+```
+
+### (Optional) Add a custom domain
+In Cloudflare Pages → your project → **Custom domains** → add `samuelkofi.com` (or whatever you own). DNS is automatic if you buy the domain through Cloudflare.
+
+---
+
+## Project structure
+```
+samuel-portfolio/
+├── index.html        # Single-page site
+├── css/style.css     # All styles
+├── js/main.js        # Nav, animations, counters
+├── assets/           # Add your headshot here
+├── wrangler.toml     # Cloudflare Pages config
+├── package.json      # Deploy scripts
+├── .gitignore
+└── README.md
+```
+
+## Local preview
+```bash
+cd ~/DEV/samuel-portfolio
+open index.html
+```
+
+## Future deploys
+After the first setup, every `git push` to `main` triggers an automatic redeploy on Cloudflare.
+
+## Tech stack
 - Pure HTML, CSS, vanilla JavaScript — no build step required
 - Google Fonts (Inter)
 - IntersectionObserver-based scroll animations
@@ -10,39 +72,3 @@ A responsive, modern single-page portfolio for Samuel Kofi Agyei-Tuffour, SecOps
 - Fully responsive (mobile, tablet, desktop)
 - Custom SVG favicon
 - Open Graph / SEO meta tags
-
-## File structure
-```
-samuel-portfolio/
-├── index.html        # Single-page site
-├── css/
-│   └── style.css     # All styles, with CSS variables & responsive breakpoints
-├── js/
-│   └── main.js       # Nav toggle, scroll effects, fade-ins, counter animation
-└── assets/           # (empty — ready for your photo, project screenshots, etc.)
-```
-
-## Run locally
-Just open `index.html` in your browser. No build, no dependencies.
-
-```bash
-cd samuel-portfolio
-open index.html        # macOS
-# or
-python3 -m http.server 8000   # then visit http://localhost:8000
-```
-
-## Customization
-- **Photo / avatar**: drop a `portrait.jpg` into `assets/` and add `<img src="assets/portrait.jpg" alt="Samuel" />` inside the `.about-card` block in `index.html`.
-- **Colors**: edit CSS variables at the top of `css/style.css` (`:root` block).
-- **Stats / numbers**: change the `data-target` attributes on `.stat-number` elements in the hero.
-- **Projects section**: a dedicated `#projects` section can be added by following the `.expertise-card` markup pattern.
-
-## Deploy
-Drop the folder into:
-- GitHub Pages
-- Netlify (drag & drop)
-- Vercel
-- Cloudflare Pages
-
-All are free for static sites.
