@@ -44,6 +44,7 @@
         <li><a href="#about" class="nav-link">.about()</a></li>
         <li><a href="#expertise" class="nav-link">.expertise()</a></li>
         <li><a href="#experience" class="nav-link">.experience()</a></li>
+        <li><a href="#projects" class="nav-link">.projects()</a></li>
         <li><a href="#education" class="nav-link">.education()</a></li>
         <li><a href="#contact" class="nav-link">.contact()</a></li>
       </ul>
@@ -423,6 +424,64 @@
                 measurably increasing policy compliance.
               </li>
             </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Projects ===== -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-eyebrow"><span class="hash">#</span> projects</span>
+        <h2 class="section-title">// build log — featured</h2>
+      </div>
+
+      <div class="project-card fade-in">
+        <div class="project-head">
+          <div class="project-title-row">
+            <span class="project-repo">grurpID</span>
+            <span class="project-status">production</span>
+          </div>
+          <div class="project-stack">
+            <span class="tag">Django 4.2</span>
+            <span class="tag">Microsoft Graph API</span>
+            <span class="tag">Azure AD</span>
+            <span class="tag">Azure Key Vault</span>
+            <span class="tag">django-auth-adfs</span>
+          </div>
+        </div>
+
+        <div class="project-body">
+          <code class="code-line">// identity lifecycle & governance platform</code>
+          <p class="project-desc">
+            An automated IAM platform that keeps employee records, teams, functions, and
+            contracts in sync with Azure AD — creating, disabling, and cleaning up accounts
+            on schedule, with a web portal for HR to manage access end-to-end.
+          </p>
+          <ul class="project-features">
+            <li>
+              <span class="hl">Lifecycle automation</span> — 12+ scheduled sync tasks
+              (Graph API) handle account creation, TAP onboarding, disable/cleanup, and
+              team/function group sync, all with <span class="hl">--dry-run</span> safety.
+            </li>
+            <li>
+              <span class="hl">Compliance by design</span> — self-service access request
+              workflow (SOC2 CC6.2) and automated quarterly access reviews (SOC2 CC6.3),
+              backed by an immutable audit log and CSV evidence export.
+            </li>
+            <li>
+              <span class="hl">Least-privilege portal</span> — Azure AD SSO with a
+              four-tier role model (break-glass / admin / HR / audit), plus a documented
+              STRIDE threat model with mitigations applied.
+            </li>
+          </ul>
+          <div class="project-links">
+            <a href="https://github.com/Leufi/grurpID" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+              <span>github.com/Leufi/grurpID</span>
+              <span class="arrow">→</span>
+            </a>
           </div>
         </div>
       </div>
