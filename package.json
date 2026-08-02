@@ -6,7 +6,7 @@
   "author": "Samuel Kofi Agyei-Tuffour <kofileumas@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "deploy": "wrangler pages deploy .",
+    "deploy": "wrangler pages deploy . --project-name=skat-portfolio",
     "dev": "wrangler pages dev ."
   }
 }
