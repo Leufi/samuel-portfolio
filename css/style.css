@@ -871,13 +871,21 @@ section {
 /* ============================================================
    Projects
    ============================================================ */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 980px;
+}
+
 .project-card {
   background: var(--bg-1);
   border: 1px solid var(--border);
   border-radius: 8px;
   overflow: hidden;
-  max-width: 980px;
   transition: var(--t);
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card:hover {
@@ -1109,6 +1117,7 @@ section {
   .cert-card, .impact-card { flex: 1 1 240px; }
   .about-grid { grid-template-columns: 1fr; gap: 2rem; }
   .expertise-grid { grid-template-columns: 1fr; }
+  .project-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
